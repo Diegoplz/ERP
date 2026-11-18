@@ -64,7 +64,7 @@ $resultado= $conexion->query($sql);
                                     <a href="editar.php?id=<?php echo $fila["id"]; ?>" class="btn btn-warning btn-sm" title="Editar">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
-                                    <a href="borrar.php?id=<?php echo $fila["id"]; ?>" class="btn btn-danger btn-sm" title="Eliminar">
+                                    <a href="#" class="btn btn-danger btn-sm" onclick="eliminar(<?php echo $fila['id']; ?>)">
                                         <i class="bi bi-trash"></i>
                                     </a>
                                 </td>
@@ -80,5 +80,58 @@ $resultado= $conexion->query($sql);
     <?php include("../includes/footer.php"); ?> 
 </div>
     <?php include("../includes/scripts.php"); ?>
+    <script>
+function eliminar(id){
+    Swal.fire({ //ESto crea la ventana
+        title:'¿Eliminar usuario?',
+        text: "Una vez eliminado, no se podra recuperar!",
+        icon: 'warning',
+
+        showCancelButton: true,
+
+        confirmCancelcolor: '#d33',
+        cancelButtonColor: '#6c757d',
+
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+    }).then((result)=>{//Esto espera que el usuario presione el boton.
+        if(result.isConfirmed){//si presiona si entra aqui.
+            window.location = "borrar.php?id=" + id;
+        }
+    })
+}
+    </script>
+    <?php if(isset($_GET["mensaje"])) {?>
+
+    <script>
+        let mensaje = "<?php echo $_GET["mensaje"]; ?>"
+
+        if(mensaje=="insertado"){
+            Swal.fire({
+                icon:"success",
+                title:"Usuario creado",
+                text: "El usuario se ha creado correctamente."
+            });
+        }
+
+        if(mensaje=="actualizado"){
+            Swal.fire({
+                icon:"success",
+                title:"Usuario actualizado",
+                text: "El usuario se ha actualizado correctamente."
+            });
+        }
+
+        if(mensaje=="eliminado"){
+            Swal.fire({
+                icon:"success",
+                title:"Usuario eliminado",
+                text: "El usuario se ha eliminado correctamente."
+            });
+        }
+
+    </script>
+
+    <?php } ?>
 </body>
 </html>
