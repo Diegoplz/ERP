@@ -38,15 +38,15 @@
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-                <a href="http://localhost/ERP/usuarios/listado.php" class="nav-link active">
+                <a href="<?php echo $ruta; ?>usuarios/listado.php" class="nav-link active">
                 <i class="nav-icon bi bi-people-fill"></i>
                 <p>Usuarios</p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>Dashboard v2</p>
+                <a href="<?php echo $ruta; ?>empresas/listado.php" class="nav-link">
+                <i class="nav-icon bi bi-buildings"></i>
+                <p>Empresas</p>
                 </a>
             </li>
             <li class="nav-item">
