@@ -1,4 +1,5 @@
 <?php
+$ruta="";
 include("includes/sesion.php");
 ?>
 

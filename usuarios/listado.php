@@ -11,13 +11,13 @@ $resultado= $conexion->query($sql);
 <html lang="es">
 <?php include("../includes/head.php"); ?>
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-  <div class="app-wrapper">
+<div class="app-wrapper">
     <?php include("../includes/header.php"); ?>
     <?php include("../includes/sidebar.php"); ?>
     <main class="app-main">
-      <!--Aqui va el listado---> 
-      <!---Cabecera-->
-      <div class="app-content-header">
+    <!--Aqui va el listado---> 
+    <!---Cabecera-->
+    <div class="app-content-header">
         <div class="container-fluid">
             <div class="row">
                 <div class=col-sm-6>
@@ -31,9 +31,9 @@ $resultado= $conexion->query($sql);
                 </div>
             </div>
         </div>
-      </div>
-      <!---Contenido---->
-      <div class="app-content">
+    </div>
+    <!---Contenido---->
+    <div class="app-content">
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
@@ -61,11 +61,11 @@ $resultado= $conexion->query($sql);
                                 <td><?php echo $fila["email"]; ?></td>
                                 <td><?php echo $fila["role"]; ?></td>
                                 <td>
-                                    <a href="#" class="btn btn-warning btn-sm">
-                                        Editar
+                                    <a href="editar.php?id=<?php echo $fila["id"]; ?>" class="btn btn-warning btn-sm" title="Editar">
+                                        <i class="bi bi-pencil-square"></i>
                                     </a>
-                                    <a href="#" class="btn btn-danger btn-sm">
-                                        Eliminar
+                                    <a href="borrar.php?id=<?php echo $fila["id"]; ?>" class="btn btn-danger btn-sm" title="Eliminar">
+                                        <i class="bi bi-trash"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -75,10 +75,10 @@ $resultado= $conexion->query($sql);
                 </div>
             </div>
         </div>
-      </div>
+    </div>
     </main> 
     <?php include("../includes/footer.php"); ?> 
-  </div>
+</div>
     <?php include("../includes/scripts.php"); ?>
 </body>
 </html>

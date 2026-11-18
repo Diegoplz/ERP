@@ -57,7 +57,7 @@
             <!--begin::Message-->
             <div class="d-flex">
                 <div class="flex-shrink-0">
-                <img src="./assets/img/user1-128x128.jpg" alt="" class="img-size-50 rounded-circle me-3" />
+                <img src="<?php echo $ruta; ?>assets/img/user2-160x160.jpg" alt="" class="img-size-50 rounded-circle me-3" />
                 </div>
                 <div class="flex-grow-1">
                 <p class="dropdown-item-title">
@@ -77,7 +77,7 @@
             <!--begin::Message-->
             <div class="d-flex">
                 <div class="flex-shrink-0">
-                <img src="./assets/img/user8-128x128.jpg" alt="" class="img-size-50 rounded-circle me-3" />
+                <img src="<?php echo $ruta; ?>assets/img/user8-128x128.jpg" alt="" class="img-size-50 rounded-circle me-3" />
                 </div>
                 <div class="flex-grow-1">
                 <p class="dropdown-item-title">
@@ -99,7 +99,7 @@
             <!--begin::Message-->
             <div class="d-flex">
                 <div class="flex-shrink-0">
-                <img src="./assets/img/user3-128x128.jpg" alt="" class="img-size-50 rounded-circle me-3" />
+                <img src="<?php echo $ruta; ?>assets/img/user3-128x128.jpg" alt="" class="img-size-50 rounded-circle me-3" />
                 </div>
                 <div class="flex-grow-1">
                 <p class="dropdown-item-title">
@@ -224,14 +224,14 @@
         <!--begin::User Menu Dropdown-->
         <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-            <img src="./assets/img/user2-160x160.jpg" class="user-image rounded-circle shadow"
+        <img src="<?php echo $ruta; ?>assets/img/user2-160x160.jpg" class="user-image rounded-circle shadow"
             alt="Alexander Pierce" />
             <span class="d-none d-xl-inline">Alexander Pierce</span>
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
             <!--begin::User Image-->
             <li class="user-header text-bg-primary">
-            <img src="./assets/img/user2-160x160.jpg" class="rounded-circle shadow" alt="Alexander Pierce" />
+            <img src="<?php echo $ruta; ?>assets/img/user2-160x160.jpg" class="rounded-circle shadow" alt="Alexander Pierce" />
             <p>
                 Alexander Pierce - Web Developer
                 <small>Member since Nov. 2023</small>
@@ -258,7 +258,7 @@
             <!--begin::Menu Footer-->
             <li class="user-footer">
             <a href="#" class="btn btn-outline-secondary">Profile</a>
-            <a href="#" class="btn btn-outline-danger float-end">Sign out</a>
+            <a href="<?php echo $ruta; ?>login/logout.php" class="btn btn-outline-danger float-end">Sign out</a>
             </li>
             <!--end::Menu Footer-->
         </ul>

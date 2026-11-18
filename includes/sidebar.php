@@ -4,7 +4,7 @@
     <!--begin::Brand Link-->
     <a href="./index.html" class="brand-link">
         <!--begin::Brand Image-->
-        <img src="./assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image opacity-75 shadow" />
+        <img src="<?php echo $ruta; ?>assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image opacity-75 shadow" />
         <!--end::Brand Image-->
         <!--begin::Brand Text-->
         <span class="brand-text fw-light">AdminLTE 4</span>
@@ -29,10 +29,10 @@
         <!--begin::Sidebar Menu-->
         <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" data-accordion="false" id="navigation">
         <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="<?php echo $ruta; ?>index.php" class="nav-link active">
             <i class="nav-icon bi bi-speedometer"></i>
             <p>
-               Inicio
+            Inicio
                 <i class="nav-arrow bi bi-chevron-right"></i>
             </p>
             </a>
