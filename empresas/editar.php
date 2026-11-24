@@ -6,10 +6,10 @@ include("../includes/db.php");
 
 $id=$_GET["id"];
 
-$sql="SELECT * FROM usuarios WHERE id=$id";
+$sql="SELECT * FROM empresas WHERE id=$id";
 
 $resultado=$conexion->query($sql);
-$fila= $resultado->fetch_assoc();// fila contendra todos los datos del usuario
+$fila= $resultado->fetch_assoc();// fila contendra todos los datos de la empresa
 ?>
 
 <!doctype html>
@@ -29,36 +29,35 @@ $fila= $resultado->fetch_assoc();// fila contendra todos los datos del usuario
     
 
     <div class="mb-3">
-        <label>Usuario</label>
-        <input type="text" name="usuario" class="form-control" value="<?php echo $fila["usuario"]; ?>">
+        <label>Nombre comercial</label>
+        <input type="text" name="nombre_comercial" class="form-control" value="<?php echo $fila["nombre_comercial"]; ?>">
     </div>
 
     <div class="mb-3">
-        <label>Contraseña</label>
-        <input type="password" name="password" class="form-control" value="<?php echo $fila["password"]; ?>">
+        <label>Razón social</label>
+        <input type="text" name="razon_social" class="form-control" value="<?php echo $fila["razon_social"]; ?>">
+    </div>
+
+    <div class="mb-3">
+        <label>Cif</label>
+        <input type="text" name="cif" class="form-control" value="<?php echo $fila["cif"]; ?>">
+    </div>
+
+    <div class="mb-3">
+        <label>Dirección</label>
+        <input type="text" name="direccion" class="form-control" value="<?php echo $fila["direccion"]; ?>">
+    </div>
+
+    <div class="mb-3">
+        <label>Codigo Postal</label>
+        <input type="text" name="codigopostal" class="form-control" value="<?php echo $fila["codigopostal"]; ?>">
     </div>
 
     <div class="mb-3">
         <label>Email</label>
         <input type="email" name="email" class="form-control" value="<?php echo $fila["email"]; ?>">
     </div>
-
-    <div class="mb-3">
-        <label>Rol</label>
-
-        <select name="role" class="form-select">
-
-            <option value="Administrador" 
-            <?php if($fila["role"]=="Administrador") echo "selected"; ?>>Administrador</option>
-            <option value="Empresa" 
-            <?php if($fila["role"]=="Empresa") echo "selected"; ?>>Empresa</option>
-            <option value="Alumno" 
-            <?php if($fila["role"]=="Alumno") echo "selected"; ?>>Alumno</option>
-
-        </select>
-
-    </div>
-
+    
     <button class="btn btn-success">
         Guardar
     </button>

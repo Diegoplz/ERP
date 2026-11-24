@@ -14,7 +14,8 @@ $fecha = date("Y-m-d H:i:s");
 
 
 $sql= 
-"INSERT INTO `empresas`(`id`, `nombre_comercial`, `razon_social`, `cif`, `direccion`, `codigopostal`, `id_provincias`, `id_localidades`, `id_usuarios`, `email`, `created_at`, `updated_at`) VALUES ('$nombre_comercial','$razon_social','$cif','$direccion','$codigopostal','$id_provincias','$id_localidad','$id_usuario','$email','$email','$fecha','$fecha')";
+"INSERT INTO `empresas`(`nombre_comercial`, `razon_social`, `cif`, `direccion`, `codigopostal`, `id_provincias`, `id_localidades`, `id_usuarios`, `email`, `created_at`, `updated_at`) 
+VALUES ('$nombre_comercial','$razon_social','$cif','$direccion','$codigopostal','$id_provincias','$id_localidades','$id_usuarios','$email','$fecha','$fecha')";
 
 $conexion-> query($sql);
 
