@@ -3,7 +3,7 @@ $ruta = "../";
 include("../includes/sesion.php");
 include("../includes/db.php");
 
-$sql= "SELECT * FROM usuarios ORDER BY id ASC";
+$sql= "SELECT * FROM alumnos ORDER BY id ASC";
 $resultado= $conexion->query($sql);
 ?>
 
@@ -21,12 +21,12 @@ $resultado= $conexion->query($sql);
         <div class="container-fluid">
             <div class="row">
                 <div class=col-sm-6>
-                    <h3 class="mb-0">Usuarios</h3>
+                    <h3 class="mb-0">Alumnos</h3>
                 </div>
                 <div class="col-sm-6 text-end">
                     <a href="nuevo.php" class="btn btn-primary">
                         <i class="bi bi-plus-circle"></i>
-                        Nuevo usuario
+                        Nuevo alumno
                     </a>
                 </div>
             </div>
@@ -38,7 +38,7 @@ $resultado= $conexion->query($sql);
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">
-                        Listado de usuarios
+                        Listado de alumnos
                     </h3>
                 </div>
                 <div class="card-body">
@@ -47,9 +47,10 @@ $resultado= $conexion->query($sql);
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Usuarios</th>
-                                <th>Email</th>
-                                <th>Rol</th>
+                                <th>Nombre</th>
+                                <th>Apellidos</th>
+                                <th>Foto</th>
+                                <th>CV</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -57,9 +58,10 @@ $resultado= $conexion->query($sql);
                             <?php while($fila=$resultado->fetch_assoc()){ ?>
                             <tr>
                                 <td><?php echo $fila["id"]; ?></td>
-                                <td><?php echo $fila["usuario"]; ?></td>
-                                <td><?php echo $fila["email"]; ?></td>
-                                <td><?php echo $fila["role"]; ?></td>
+                                <td><?php echo $fila["nombre"]; ?></td>
+                                <td><?php echo $fila["apellidos"]; ?></td>
+                                <td><?php if($fila["foto"]!=""){echo "Sí";}else{echo "No";} ?></td>
+                                <td><?php if($fila["cv"]!=""){echo "Sí";}else{echo "No";} ?></td>
                                 <td>
                                     <a href="editar.php?id=<?php echo $fila["id"]; ?>" class="btn btn-warning btn-sm" title="Editar">
                                         <i class="bi bi-pencil-square"></i>

@@ -38,7 +38,7 @@
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-                <a href="<?php echo $ruta; ?>usuarios/listado.php" class="nav-link active">
+                <a href="<?php echo $ruta; ?>usuarios/listado.php" class="nav-link">
                 <i class="nav-icon bi bi-people-fill"></i>
                 <p>Usuarios</p>
                 </a>
@@ -50,9 +50,9 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>Dashboard v3</p>
+                <a href="<?php echo $ruta; ?>alumnos/listado.php" class="nav-link">
+                <i class="nav-icon bi bi-mortarboard-fill"></i>
+                <p>Alumnos</p>
                 </a>
             </li>
             </ul>
