@@ -17,32 +17,35 @@ include("../includes/sesion.php");
         <form action="insertar.php" method="POST">
 
     <div class="mb-3">
-        <label>Usuario</label>
-        <input type="text" name="usuario" class="form-control" required>
+        <label>Nombre comercial</label>
+        <input type="text" name="nombre_comercial" class="form-control" required>
     </div>
 
     <div class="mb-3">
-        <label>Contraseña</label>
-        <input type="password" name="password" class="form-control" required>
+        <label>Razón social</label>
+        <input type="text" name="razon_social" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Cif</label>
+        <input type="text" name="cif" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Dirección</label>
+        <input type="text" name="direccion" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Código Postal</label>
+        <input type="text" name="codigopostal" class="form-control">
     </div>
 
     <div class="mb-3">
         <label>Email</label>
         <input type="email" name="email" class="form-control">
     </div>
-
-    <div class="mb-3">
-        <label>Rol</label>
-
-        <select name="role" class="form-select">
-
-            <option value="Administrador">Administrador</option>
-            <option value="Empresa">Empresa</option>
-            <option value="Alumno">Alumno</option>
-
-        </select>
-
-    </div>
+    
 
     <button class="btn btn-success">
         Guardar

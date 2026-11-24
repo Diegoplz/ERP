@@ -3,7 +3,7 @@ $ruta = "../";
 include("../includes/sesion.php");
 include("../includes/db.php");
 
-$sql= "SELECT * FROM usuarios ORDER BY id ASC";
+$sql= "SELECT * FROM empresas ORDER BY id ASC";
 $resultado= $conexion->query($sql);
 ?>
 
@@ -26,7 +26,7 @@ $resultado= $conexion->query($sql);
                 <div class="col-sm-6 text-end">
                     <a href="nuevo.php" class="btn btn-primary">
                         <i class="bi bi-plus-circle"></i>
-                        Nuevo empresa
+                        Nueva empresa
                     </a>
                 </div>
             </div>
@@ -47,9 +47,10 @@ $resultado= $conexion->query($sql);
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Usuarios</th>
+                                <th>Nombre comercial</th>
+                                <th>Razón social</th>
+                                <th>CIF</th>
                                 <th>Email</th>
-                                <th>Rol</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -57,9 +58,10 @@ $resultado= $conexion->query($sql);
                             <?php while($fila=$resultado->fetch_assoc()){ ?>
                             <tr>
                                 <td><?php echo $fila["id"]; ?></td>
-                                <td><?php echo $fila["usuario"]; ?></td>
+                                <td><?php echo $fila["nombre_comercial"]; ?></td>
+                                <td><?php echo $fila["razon_social"]; ?></td>
+                                <td><?php echo $fila["cif"]; ?></td>
                                 <td><?php echo $fila["email"]; ?></td>
-                                <td><?php echo $fila["role"]; ?></td>
                                 <td>
                                     <a href="editar.php?id=<?php echo $fila["id"]; ?>" class="btn btn-warning btn-sm" title="Editar">
                                         <i class="bi bi-pencil-square"></i>
@@ -109,24 +111,24 @@ function eliminar(id){
         if(mensaje=="insertado"){
             Swal.fire({
                 icon:"success",
-                title:"Usuario creado",
-                text: "El usuario se ha creado correctamente."
+                title:"Empresa creada",
+                text: "La empresa se ha creado correctamente."
             });
         }
 
         if(mensaje=="actualizado"){
             Swal.fire({
                 icon:"success",
-                title:"Usuario actualizado",
-                text: "El usuario se ha actualizado correctamente."
+                title:"Empresa actualizada",
+                text: "La empresa se ha actualizado correctamente."
             });
         }
 
         if(mensaje=="eliminado"){
             Swal.fire({
                 icon:"success",
-                title:"Usuario eliminado",
-                text: "El usuario se ha eliminado correctamente."
+                title:"Empresa eliminada",
+                text: "La empresa se ha eliminado correctamente."
             });
         }
 
